@@ -1,27 +1,8 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-
-import { defaultIcon } from "../icons/defaultIcon";
+import { MapContainer, TileLayer} from "react-leaflet";
 import { chargers } from "../data/chargers";
+import { MarkerLayer } from "../layers/marker_layer";
 
-const MarkerLayer = ({ data }) => {
-
-  return data.features.map((feature) => {
-    const { coordinates } = feature.geometry;
-
-    return (
-      <Marker
-        key={String(coordinates)}
-        position={[coordinates[1], coordinates[0]]}
-        icon={defaultIcon}
-      >
-        <Popup>
-          Popup <br /> Easily customizable.
-        </Popup>
-      </Marker>
-    );
-  });
-};
 
 export const Map = () => {
   const position = [0, 0];
