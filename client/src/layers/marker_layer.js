@@ -1,5 +1,5 @@
 import React from "react";
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, Tooltip } from "react-leaflet";
 import { defaultIcon } from "../icons/defaultIcon";
 
 export const MarkerLayer = ({ data }) => {
@@ -13,6 +13,9 @@ export const MarkerLayer = ({ data }) => {
           position={[coordinates[1], coordinates[0]]}
           icon={defaultIcon}
         >
+        <Tooltip>
+            
+        </Tooltip>
           <Popup>
             Popup <br /> Easily customizable.
           </Popup>
