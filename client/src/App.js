@@ -2,6 +2,7 @@ import React from "react";
 
 import "leaflet/dist/leaflet.css";
 import "./app.css";
+import 'antd/dist/reset.css';
 
 import { Map } from "./Map/Map"
 

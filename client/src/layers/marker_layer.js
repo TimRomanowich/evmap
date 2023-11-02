@@ -1,6 +1,38 @@
 import React from "react";
 import { Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import { chargerIcon } from "../icons/chargerIcon";
+import { Button, Card, InputNumber, Space } from "antd";
+
+const PopupStatistics = ({ feature }) => {
+  //Get variables from features
+  const{ "Station Name":stationName, EVConnectorTypes, "EV Pricing":pricing } = feature.properties;
+
+  return (
+    <>
+      <Card type="inner" title="Name">
+        <b>{`${stationName}`}</b>
+      </Card>,
+      <Card type="inner" title="EVConnectorTypes">
+      <b>{`${EVConnectorTypes}`}</b>
+      </Card>,
+      <Card type="inner" title="Pricing">
+        Inner Card content
+      </Card>,
+      <Card type="inner" title="Radius Filter">
+      <Space size="small">
+          <InputNumber
+            defaultValue={10}
+            min={0}
+            onChange={(e) => console.log(e)}
+          ></InputNumber>
+          <Button type="primary" shape="round">
+            Filter by miles
+          </Button>
+        </Space>
+      </Card>
+    </>
+  );
+};
 
 export const MarkerLayer = ({ data }) => {
   const leafletMap = useMap();
@@ -21,7 +53,7 @@ export const MarkerLayer = ({ data }) => {
             ZIP: {ZIP}
         </Tooltip>
           <Popup>
-            <h3>{stationName}</h3>
+            <PopupStatistics feature ={feature}/>
           </Popup>
         </Marker>
       );
