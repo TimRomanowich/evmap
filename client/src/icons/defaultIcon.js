@@ -15,12 +15,3 @@ export const defaultIcon = L.icon({
   tooltipAnchor,
 });
 
-export const teslaClickedIcon = L.icon({
-    iconUrl,
-    shadowUrl,
-    iconSize,
-    shadowSize,
-    iconAnchor,
-    popupAnchor,
-    tooltipAnchor,
-});
