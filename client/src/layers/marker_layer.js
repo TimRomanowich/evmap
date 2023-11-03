@@ -1,12 +1,16 @@
-import React from "react";
+import {useState} from "react";
 import { Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import { chargerIcon } from "../icons/chargerIcon";
-import { Button, Card, InputNumber, Space } from "antd";
+import { Button, Card, InputNumber, Rate, Space } from "antd";
+import { StarOutlined, StarFilled } from "@ant-design/icons";
+
+
+
 
 const PopupStatistics = ({ feature }) => {
   //Get variables from features
-  const{ "Station Name":stationName, EVConnectorTypes, "EV Pricing":pricing } = feature.properties;
-
+  const{ "Station Name":stationName, EVConnectorTypes, "EV Pricing":pricing, ID } = feature.properties;
+  
   return (
     <>
       <Card type="inner" title="Name">
@@ -16,20 +20,11 @@ const PopupStatistics = ({ feature }) => {
       <b>{`${EVConnectorTypes}`}</b>
       </Card>,
       <Card type="inner" title="Pricing">
-        Inner Card content
+        {pricing}
       </Card>,
-      <Card type="inner" title="Radius Filter">
-      <Space size="small">
-          <InputNumber
-            defaultValue={10}
-            min={0}
-            onChange={(e) => console.log(e)}
-          ></InputNumber>
-          <Button type="primary" shape="round">
-            Filter by miles
-          </Button>
-        </Space>
-      </Card>
+      <Card type="inner" title="More Info">
+        <a href="">{ID}</a>
+      </Card>,
     </>
   );
 };
