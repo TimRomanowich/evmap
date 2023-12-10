@@ -1,6 +1,8 @@
-import {useState} from "react";
+
+
 import { Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import { chargerIcon } from "../../../assets/icons/chargerIcon";
+
 import { Card } from "antd";
 
 
@@ -22,7 +24,7 @@ const PopupStatistics = ({ feature }) => {
       </Card>
       <Card type="inner">
         <a href={"http://localhost:5000/AddComment/"}>Add reviews for: {ID}</a> <br></br>
-        <a href={"http://localhost:5000/Reviews/"}> See reviews: {ID}</a>
+        <a href={"http://localhost:5000/Reviews/"}> See reviews for: {ID}</a>
       </Card>
     </>
   );
