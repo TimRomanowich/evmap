@@ -2,8 +2,9 @@ import React from "react";
 
 import { MapContainer, TileLayer} from "react-leaflet";
 import { chargers } from "../components/Map/data/chargers";
+import {counties} from "../components/Map/data/counties";
 import { MarkerLayer } from "../components/Map/layers/marker_layer";
-//import {CountiesLayer} from "../components/Map/layers/county_layer";
+import {CountiesLayer} from "../components/Map/layers/county_layer";
 
 import "leaflet/dist/leaflet.css";
 let config = {};
@@ -24,11 +25,13 @@ export const Map = () => {
 
   return (
     <MapContainer center={position} zoom={10} scrollWheelZoom={true}>
+      
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
     
+    <CountiesLayer data={counties}/>
     <MarkerLayer data={chargers}/>
     
     </MapContainer>
