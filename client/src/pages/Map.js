@@ -1,8 +1,10 @@
 import React from "react";
+
 import { MapContainer, TileLayer} from "react-leaflet";
 import { chargers } from "../components/Map/data/chargers";
 import { MarkerLayer } from "../components/Map/layers/marker_layer";
-//import "../styles/Map.css"
+//import {CountiesLayer} from "../components/Map/layers/county_layer";
+
 import "leaflet/dist/leaflet.css";
 let config = {};
 config.params = {
@@ -26,7 +28,9 @@ export const Map = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      
     <MarkerLayer data={chargers}/>
+    
     </MapContainer>
   );
 };

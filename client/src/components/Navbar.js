@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from '../../src/assets/images/ev-station.png'
+import Logo from '../../src/assets/images/navIcon.png'
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 function Navbar() {
@@ -23,9 +23,7 @@ function Navbar() {
         </div>
         <div className="rightSide">
           <Link to="/"> Home </Link>
-          <Link to="localhost:3001"> Map </Link>
-          <Link to="/Map">  Int.Map</Link>
-          <Link to="/tour"> Tour </Link>
+          <Link to="/Map">  Charger Map</Link>  
           <Link to="/chargers"> Charger Types </Link>
           <Link to="/AddComment">  Add Comment</Link>
           <button onClick={toggleNavbar}>       
